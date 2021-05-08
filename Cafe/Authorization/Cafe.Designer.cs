@@ -71,7 +71,7 @@ namespace Cafe
             this.RegisterLabel1.Location = new System.Drawing.Point(134, 410);
             this.RegisterLabel1.Name = "RegisterLabel1";
             this.RegisterLabel1.Size = new System.Drawing.Size(154, 16);
-            this.RegisterLabel1.TabIndex = 6;
+            this.RegisterLabel1.TabIndex = 3;
             this.RegisterLabel1.Text = "Зарегистрироваться";
             this.RegisterLabel1.Click += new System.EventHandler(this.RegisterLabel1_Click);
             this.RegisterLabel1.MouseEnter += new System.EventHandler(this.RegisterLabel1_MouseEnter);
@@ -101,7 +101,7 @@ namespace Cafe
             this.passField.Location = new System.Drawing.Point(98, 213);
             this.passField.Name = "passField";
             this.passField.Size = new System.Drawing.Size(246, 48);
-            this.passField.TabIndex = 3;
+            this.passField.TabIndex = 1;
             this.passField.Enter += new System.EventHandler(this.passField_Enter);
             this.passField.Leave += new System.EventHandler(this.passField_Leave);
             // 
@@ -122,7 +122,7 @@ namespace Cafe
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
             this.loginField.Size = new System.Drawing.Size(246, 64);
-            this.loginField.TabIndex = 3;
+            this.loginField.TabIndex = 0;
             this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
             this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
             // 
@@ -177,11 +177,13 @@ namespace Cafe
             // 
             // Cafe
             // 
+            this.AcceptButton = this.buttonLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Cafe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";

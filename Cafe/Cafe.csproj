@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.23\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
@@ -66,18 +70,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_dish.cs">
+    <Compile Include="Add forms\AddDishesInDB.cs" />
+    <Compile Include="Add forms\Add_dish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_dish.Designer.cs">
+    <Compile Include="Add forms\Add_dish.Designer.cs">
       <DependentUpon>Add_dish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add_Worker.cs">
+    <Compile Include="Add forms\Add_Worker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_Worker.Designer.cs">
+    <Compile Include="Add forms\Add_Worker.Designer.cs">
       <DependentUpon>Add_Worker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add forms\InputEmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add forms\InputEmailForm.Designer.cs">
+      <DependentUpon>InputEmailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Additional buttons\PrintTable.cs" />
+    <Compile Include="Additional buttons\SaveTableInWord.cs" />
+    <Compile Include="Additional buttons\SendTableOnEmail.cs" />
+    <Compile Include="Administration form\TableLoader.cs" />
     <Compile Include="Authorization\AuthorizationController.cs" />
     <Compile Include="Authorization\Cafe.cs">
       <SubType>Form</SubType>
@@ -86,10 +101,10 @@
       <DependentUpon>Cafe.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="Admin.cs">
+    <Compile Include="Administration form\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
+    <Compile Include="Administration form\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
@@ -107,16 +122,19 @@
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Registr\RegistrationController.cs" />
-    <EmbeddedResource Include="Add_dish.resx">
+    <EmbeddedResource Include="Add forms\Add_dish.resx">
       <DependentUpon>Add_dish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add_Worker.resx">
+    <EmbeddedResource Include="Add forms\Add_Worker.resx">
       <DependentUpon>Add_Worker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add forms\InputEmailForm.resx">
+      <DependentUpon>InputEmailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authorization\Cafe.resx">
       <DependentUpon>Cafe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
+    <EmbeddedResource Include="Administration form\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
@@ -135,6 +153,7 @@
     <EmbeddedResource Include="Registr\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

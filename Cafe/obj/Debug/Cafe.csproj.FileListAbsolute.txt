@@ -115,3 +115,4 @@ D:\Cafe\Cafe\obj\Debug\Cafe.csproj.CoreCompileInputs.cache
 D:\Cafe\Cafe\obj\Debug\Cafe.csproj.CopyComplete
 D:\Cafe\Cafe\obj\Debug\Cafe.exe
 D:\Cafe\Cafe\obj\Debug\Cafe.pdb
+D:\Cafe\Cafe\obj\Debug\Cafe.Add_forms.InputEmailForm.resources

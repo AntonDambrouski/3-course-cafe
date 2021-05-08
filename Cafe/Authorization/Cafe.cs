@@ -13,6 +13,7 @@ namespace Cafe
 {
     public partial class Cafe : Form
     {
+        Admin admin = null;
         public Cafe()
         {
             InitializeComponent();
@@ -82,8 +83,10 @@ namespace Cafe
                 string type = Authorization.AuthorizationController.CheckInputDataReturnType(loginField.Text, passField.Text);
                 if (type == "adm")
                 {
-                   
-                  //TODO: open admin form
+                    admin = new Admin();
+                    this.Hide();
+                    admin.Owner = this;
+                    admin.Show();
                 }
 
                 if (type == "clt")
