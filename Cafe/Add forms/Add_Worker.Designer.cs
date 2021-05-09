@@ -29,25 +29,25 @@ namespace Cafe
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPosition = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxFIO = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxAge = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.textBoxSalary = new System.Windows.Forms.TextBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxPosition
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(133, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxPosition.Location = new System.Drawing.Point(127, 137);
+            this.textBoxPosition.Name = "textBoxPosition";
+            this.textBoxPosition.Size = new System.Drawing.Size(133, 20);
+            this.textBoxPosition.TabIndex = 4;
             // 
             // label1
             // 
@@ -69,12 +69,12 @@ namespace Cafe
             this.label2.TabIndex = 2;
             this.label2.Text = "ФИО:";
             // 
-            // textBox2
+            // textBoxFIO
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxFIO.Location = new System.Drawing.Point(127, 44);
+            this.textBoxFIO.Name = "textBoxFIO";
+            this.textBoxFIO.Size = new System.Drawing.Size(133, 20);
+            this.textBoxFIO.TabIndex = 0;
             // 
             // label3
             // 
@@ -86,13 +86,13 @@ namespace Cafe
             this.label3.TabIndex = 2;
             this.label3.Text = "Возраст:";
             // 
-            // textBox3
+            // textBoxAge
             // 
-            this.textBox3.Location = new System.Drawing.Point(127, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 20);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxAge.Location = new System.Drawing.Point(127, 75);
+            this.textBoxAge.Name = "textBoxAge";
+            this.textBoxAge.Size = new System.Drawing.Size(133, 20);
+            this.textBoxAge.TabIndex = 1;
+            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // label4
             // 
@@ -104,37 +104,39 @@ namespace Cafe
             this.label4.TabIndex = 2;
             this.label4.Text = "Зарплата:";
             // 
-            // textBox4
+            // textBoxSalary
             // 
-            this.textBox4.Location = new System.Drawing.Point(127, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(133, 20);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxSalary.Location = new System.Drawing.Point(127, 106);
+            this.textBoxSalary.Name = "textBoxSalary";
+            this.textBoxSalary.Size = new System.Drawing.Size(133, 20);
+            this.textBoxSalary.TabIndex = 2;
+            this.textBoxSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSalary_KeyPress);
             // 
-            // button1
+            // buttonCancel
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(68, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "отмена";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonCancel.BackColor = System.Drawing.Color.Lime;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.Location = new System.Drawing.Point(68, 209);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(151, 32);
+            this.buttonCancel.TabIndex = 6;
+            this.buttonCancel.Text = "отмена";
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // button15
+            // buttonAdd
             // 
-            this.button15.BackColor = System.Drawing.Color.Lime;
-            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(68, 171);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(151, 32);
-            this.button15.TabIndex = 9;
-            this.button15.Text = "добавить";
-            this.button15.UseVisualStyleBackColor = false;
+            this.buttonAdd.BackColor = System.Drawing.Color.Lime;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(68, 171);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(151, 32);
+            this.buttonAdd.TabIndex = 5;
+            this.buttonAdd.Text = "добавить";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label5
             // 
@@ -151,23 +153,27 @@ namespace Cafe
             // 
             // Add_Worker
             // 
+            this.AcceptButton = this.buttonAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(275, 263);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.textBoxSalary);
+            this.Controls.Add(this.textBoxAge);
+            this.Controls.Add(this.textBoxFIO);
+            this.Controls.Add(this.textBoxPosition);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Add_Worker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add_Worker";
             this.Load += new System.EventHandler(this.Add_Worker_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Add_Worker_MouseDown);
@@ -179,16 +185,16 @@ namespace Cafe
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxPosition;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxFIO;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBoxSalary;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label5;
     }
 }

@@ -89,6 +89,7 @@ namespace Cafe.Additional_buttons
                 }
 
                 oDoc.SaveAs2(filename);
+                GC.Collect();
             }
         }
     }

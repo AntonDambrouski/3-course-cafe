@@ -112,13 +112,17 @@ namespace Cafe
 
         }
 
+        //working with dishes
         private void buttonLoadDishes_Click(object sender, EventArgs e)
         {
             try
             {
+                ClearSearchFiealds();
                 Administration_form.TableLoader.LoadDishesTable(this.dataGridView1, out string[] searchBy);
-                LoadComboBoxSearchBy(searchBy);
-                ActivateDishesElements();
+                ChangeEnabledOfDishesElements(true);
+                ChangeEnabledOfWorkerElements(false);
+                LoadComboBoxSearchBy(comboBoxDishesSearchBy,searchBy);
+                dataGridView1.ReadOnly = true;
             }
             catch (Exception ex)
             {
@@ -126,16 +130,10 @@ namespace Cafe
             }
         }
 
-        private void ActivateDishesElements()
+        private void LoadComboBoxSearchBy(ComboBox comboBox, string[] searchByValues)
         {
-            buttonAddDishes.Enabled = buttonDelDishes.Enabled = buttonPrintDishesTable.Enabled = buttonSaveDishesTable.Enabled = buttonSendDishesTable.Enabled = true;
-            textBoxDishesSearch.Enabled = comboBoxDishesSearchBy.Enabled = true;
-        }
-
-        private void LoadComboBoxSearchBy(string[] searchByValues)
-        {
-            comboBoxDishesSearchBy.Items.Clear();
-            comboBoxDishesSearchBy.Items.AddRange(searchByValues);
+            comboBox.Items.Clear();
+            comboBox.Items.AddRange(searchByValues);
         }
 
         private void buttonAddDishes_Click(object sender, EventArgs e)
@@ -178,7 +176,7 @@ namespace Cafe
                     }
                     else
                     {
-                        (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"{comboBoxDishesSearchBy.SelectedItem} LIKE N'%{textBoxDishesSearch.Text}%'";
+                        (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"{comboBoxDishesSearchBy.SelectedItem} LIKE '%{textBoxDishesSearch.Text}%'";
                     }
 
                 }
@@ -249,5 +247,139 @@ namespace Cafe
         {
             e.Graphics.DrawImage(Additional_buttons.PrintTable.GetBmpForPrint(dataGridView1, printDocument1.DefaultPageSettings.Bounds), 0, 0);
         }
+
+
+        private void comboBoxDishesSearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxDishesSearch.Clear();
+        }
+        //working with workers
+
+        private void buttonShowWorkr_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearSearchFiealds();
+                Administration_form.TableLoader.LoadWorkersTable(this.dataGridView1, out string[] searchBy);
+                ChangeEnabledOfWorkerElements(true);
+                ChangeEnabledOfDishesElements(false);
+                LoadComboBoxSearchBy(comboBoxWorkrSearchBy, searchBy);
+                dataGridView1.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void buttonAddWorkr_Click(object sender, EventArgs e)
+        {
+            Add_Worker add_Worker = new Add_Worker();
+            if (add_Worker.ShowDialog() == DialogResult.OK)
+            {
+                buttonShowWorkr_Click(null, null);
+            }
+        }
+
+        private void textBoxWorkrSearch_TextChanged(object sender, EventArgs e)
+        {
+            labelErrorWorkrSearch.Text = string.Empty;
+            if (textBoxWorkrSearch.Text.Length != 0)
+            {
+                try
+                {
+                    if (comboBoxWorkrSearchBy.SelectedItem is null)
+                    {
+                        throw new ArgumentException("Не выбрано поле для поиска!");
+                    }
+
+                    if (long.TryParse(textBoxWorkrSearch.Text, out long valueType))
+                    {
+                        (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"{comboBoxWorkrSearchBy.SelectedItem} = '{textBoxWorkrSearch.Text}'";
+                    }
+                    else
+                    {
+                        (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"{comboBoxWorkrSearchBy.SelectedItem} LIKE '%{textBoxWorkrSearch.Text}%'";
+                    }
+
+                }
+                catch (ArgumentException ex)
+                {
+                    labelErrorWorkrSearch.Text = ex.Message;
+                }
+                catch (Exception ex)
+                {
+                    labelErrorWorkrSearch.Text = "Некоррекнтые данные!";
+                }
+            }
+            else
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
+
+        private void buttonSaveWrkrTable_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Word Documents (*.docx)|*.docx";
+            sfd.FileName = "Workers.docx";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Additional_buttons.SaveTableInWord.Export_Data_To_Word(dataGridView1, sfd.FileName, "Workers");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void comboBoxWorkrSearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxWorkrSearch.Clear();
+        }
+        //working with accounts
+
+        private void buttonShowAccounts_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearSearchFiealds();
+                Administration_form.TableLoader.LoadAccountsTable(dataGridView1);
+                ChangeEnabledOfDishesElements(false);
+                ChangeEnabledOfWorkerElements(false);
+                dataGridView1.ReadOnly = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //additional functions
+
+        private void ClearSearchFiealds()
+        {
+            comboBoxDishesSearchBy.Items.Clear();
+            textBoxDishesSearch.Clear();
+            comboBoxWorkrSearchBy.Items.Clear();
+            textBoxWorkrSearch.Clear();
+        }
+
+        private void ChangeEnabledOfWorkerElements(bool enabled)
+        {
+            buttonAddWorkr.Enabled = buttonDelWorkr.Enabled = buttonPrintWorkrTable.Enabled = buttonSaveWrkrTable.Enabled = buttonSendWorkrTable.Enabled = enabled;
+            comboBoxWorkrSearchBy.Enabled = textBoxWorkrSearch.Enabled = enabled;
+        }
+
+        private void ChangeEnabledOfDishesElements(bool enabled)
+        {
+            buttonAddDishes.Enabled = buttonDelDishes.Enabled = buttonPrintDishesTable.Enabled = buttonSaveDishesTable.Enabled = buttonSendDishesTable.Enabled = enabled;
+            textBoxDishesSearch.Enabled = comboBoxDishesSearchBy.Enabled = enabled;
+        }
+
     }
 }

@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add forms\AddDishesInDB.cs" />
+    <Compile Include="Add forms\AddWorkersInDB.cs" />
     <Compile Include="Add forms\Add_dish.cs">
       <SubType>Form</SubType>
     </Compile>

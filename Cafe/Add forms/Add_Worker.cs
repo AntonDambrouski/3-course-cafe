@@ -17,11 +17,6 @@ namespace Cafe
             InitializeComponent();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         Point lastPoint;
 
         private void Add_Worker_MouseMove(object sender, MouseEventArgs e)
@@ -55,6 +50,47 @@ namespace Cafe
             {
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Add_forms.AddWorkersInDB.CheckOnCorrectInput(textBoxFIO.Text, textBoxAge.Text,textBoxSalary.Text ,textBoxPosition.Text);
+                Add_forms.AddWorkersInDB.InsertProductIntoDB(textBoxFIO.Text, textBoxAge.Text, textBoxSalary.Text, textBoxPosition.Text);
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Incorrect input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void textBoxSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }
