@@ -14,6 +14,7 @@ namespace Cafe
     public partial class Cafe : Form
     {
         Admin admin = null;
+        Menu menu = null;
         public Cafe()
         {
             InitializeComponent();
@@ -80,8 +81,8 @@ namespace Cafe
             try
             {
                 Authorization.AuthorizationController.CheckInputFields(loginField.Text, passField.Text);
-                string type = Authorization.AuthorizationController.CheckInputDataReturnType(loginField.Text, passField.Text);
-                if (type == "adm")
+                Guest_form.User user = Authorization.AuthorizationController.CheckInputDataReturnType(loginField.Text, passField.Text);
+                if (user.type == "adm")
                 {
                     admin = new Admin();
                     this.Hide();
@@ -89,9 +90,12 @@ namespace Cafe
                     admin.Show();
                 }
 
-                if (type == "clt")
+                if (user.type == "clt")
                 {
-                   //TODO: open worker form
+                    menu = new Menu(user);
+                    this.Hide();
+                    menu.Owner = this;
+                    menu.Show();
                 }
             }
             catch (ArgumentException ex)
@@ -118,13 +122,7 @@ namespace Cafe
         private void RegisterLabel1_Click(object sender, EventArgs e)
         {
             Registration registration = new Registration();
-            Menu myMenu = null;
-            if (registration.ShowDialog() == DialogResult.OK)
-            {
-                this.Hide();
-                myMenu = new Menu();
-                myMenu.Show();
-            }
+            registration.ShowDialog();
         }
 
         private void RegisterLabel1_MouseEnter(object sender, EventArgs e)

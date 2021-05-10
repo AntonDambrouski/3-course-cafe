@@ -47,6 +47,31 @@ namespace Cafe.Additional_buttons
             mail.Body = mailBody;
             client.Send(mail);
         }
+
+        public static void SendEmail(string text, string emailTo)
+        {
+            var client = new SmtpClient("smtp.gmail.com", 587);
+            client.EnableSsl = true;
+            client.Credentials = new NetworkCredential("Egor.Seven.cafe@gmail.com", "ThisIsMyLife");
+
+            var mail = new MailMessage();
+            mail.From = new MailAddress("Egor.Seven.cafe@gmail.com");
+            mail.To.Add(emailTo);
+            mail.IsBodyHtml = true;
+            mail.Subject = "Таблица с данными";
+
+            string[] lines = text.Split('\n');
+            string mailBody = @"<p>";
+            foreach (var item in lines)
+            {
+                mailBody += item + "<br>";
+            }
+
+            mailBody += "</p>";
+            mail.Body = mailBody;
+            client.Send(mail);
+        }
+
         public static void IsValidEmail(string email)
         {
             try

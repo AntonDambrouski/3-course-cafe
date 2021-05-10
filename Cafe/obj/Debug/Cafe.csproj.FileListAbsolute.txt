@@ -83,8 +83,6 @@ D:\Папка Егор\МГКЭ\C#\Папка\Кафе 2\Cafe\Cafe\obj\Debug\Caf
 D:\Папка Егор\МГКЭ\C#\Папка\Кафе 2\Cafe\Cafe\obj\Debug\Cafe.Admin.resources
 D:\Папка Егор\МГКЭ\C#\Папка\Кафе 2\Cafe\Cafe\obj\Debug\Cafe.Add_dish.resources
 D:\Папка Егор\МГКЭ\C#\Папка\Кафе 2\Cafe\Cafe\obj\Debug\Cafe.Add_Worker.resources
-D:\Cafe\Cafe\bin\Debug\accounts.mdf
-D:\Cafe\Cafe\bin\Debug\accounts_log.ldf
 D:\Cafe\Cafe\bin\Debug\Cafe.exe.config
 D:\Cafe\Cafe\bin\Debug\Cafe.exe
 D:\Cafe\Cafe\bin\Debug\Cafe.pdb
@@ -116,3 +114,6 @@ D:\Cafe\Cafe\obj\Debug\Cafe.csproj.CopyComplete
 D:\Cafe\Cafe\obj\Debug\Cafe.exe
 D:\Cafe\Cafe\obj\Debug\Cafe.pdb
 D:\Cafe\Cafe\obj\Debug\Cafe.Add_forms.InputEmailForm.resources
+D:\Cafe\Cafe\bin\Debug\cafe.mdf
+D:\Cafe\Cafe\bin\Debug\cafe_log.ldf
+D:\Cafe\Cafe\obj\Debug\Cafe.Guest_form.ConfirmPurchaseForm.resources

@@ -45,6 +45,11 @@ namespace Cafe.Administration_form
             LoadTable(dataGridView, "Accounts");
         }
 
+        public static void LoadSalesTable(DataGridView dataGridView)
+        {
+            LoadTable(dataGridView, "Purschase");
+        }
+
         public static void SaveChanges()
         {
             SqlConnection sqlConnection = null;
@@ -83,6 +88,5 @@ namespace Cafe.Administration_form
                 }
             }
         }
-
     }
 }

@@ -381,5 +381,20 @@ namespace Cafe
             textBoxDishesSearch.Enabled = comboBoxDishesSearchBy.Enabled = enabled;
         }
 
+        private void buttonSales_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearSearchFiealds();
+                Administration_form.TableLoader.LoadSalesTable(dataGridView1);
+                ChangeEnabledOfDishesElements(false);
+                ChangeEnabledOfWorkerElements(false);
+                dataGridView1.ReadOnly = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

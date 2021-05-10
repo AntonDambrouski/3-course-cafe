@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cafe.Guest_form;
 using System.Configuration;
 
 namespace Cafe.Authorization
@@ -24,17 +25,18 @@ namespace Cafe.Authorization
             }
         }
 
-        public static string CheckInputDataReturnType(string login, string password)
+        public static User CheckInputDataReturnType(string login, string password)
         {
             SqlConnection sqlConnection = null;
             try
             {
                 sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["cafeDB"].ConnectionString);
-                SqlCommand sqlCommand = new SqlCommand($"SELECT Пароль, Тип FROM Accounts WHERE Логин = N'{login}'", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand($"SELECT * FROM Accounts WHERE Логин = N'{login}'", sqlConnection);
                 sqlConnection.Open();
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 sqlCommand.Dispose();
-                return GetType(sqlDataReader, password);
+                sqlDataReader.Read();
+                return new User(long.Parse(sqlDataReader[0].ToString()), sqlDataReader.GetString(1), sqlDataReader.GetString(2), sqlDataReader.GetString(3), sqlDataReader.GetString(5));
             }
             catch (ArgumentException ex)
             {
