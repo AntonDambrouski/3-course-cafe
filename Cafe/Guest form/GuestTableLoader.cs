@@ -29,7 +29,6 @@ namespace Cafe.Guest_form
 
         public static void LoadBasketTable(DataGridView dataGridView, List<Guest_form.basket> basket)
         {
-            dataTable.Dispose();
             dataTable = new DataTable();
             dataTable.Columns.Add("Id");
             dataTable.Columns.Add("Название");

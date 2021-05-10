@@ -47,7 +47,34 @@ namespace Cafe.Administration_form
 
         public static void LoadSalesTable(DataGridView dataGridView)
         {
-            LoadTable(dataGridView, "Purschase");
+            SqlConnection sqlConnection = null;
+            try
+            {
+                sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["cafeDB"].ConnectionString);
+                sqlDataAdapter = new SqlDataAdapter(@"
+select  Purschase.Id,
+        Dishes.*,
+        Purschase.id_client
+From Purschase
+Join Dishes on Dishes.Id = Purschase.id_dish", sqlConnection);
+                dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                dataGridView.DataSource = dataTable;
+                dataGridView.Columns[0].HeaderText = "Id покупки";
+                dataGridView.Columns[1].HeaderText = "Id продажи";
+                dataGridView.Columns["id_client"].HeaderText = "Id клиента";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (!(sqlConnection is null))
+                {
+                    sqlConnection.Close();
+                }
+            }
         }
 
         public static void SaveChanges()

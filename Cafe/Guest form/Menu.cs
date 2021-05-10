@@ -252,6 +252,7 @@ namespace Cafe
 
                     basket.Clear();
                     buttonShowBasket_Click(sender, e);
+                    MessageBox.Show("Заказ оплачен!");
                 }
             }
             else
