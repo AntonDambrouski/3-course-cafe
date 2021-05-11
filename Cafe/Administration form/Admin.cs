@@ -123,6 +123,7 @@ namespace Cafe
                 ChangeEnabledOfWorkerElements(false);
                 LoadComboBoxSearchBy(comboBoxDishesSearchBy,searchBy);
                 dataGridView1.ReadOnly = true;
+                dataGridView1.AllowUserToDeleteRows = false;
             }
             catch (Exception ex)
             {
@@ -265,6 +266,7 @@ namespace Cafe
                 ChangeEnabledOfDishesElements(false);
                 LoadComboBoxSearchBy(comboBoxWorkrSearchBy, searchBy);
                 dataGridView1.ReadOnly = true;
+                dataGridView1.AllowUserToDeleteRows = false;
             }
             catch (Exception ex)
             {
@@ -352,6 +354,7 @@ namespace Cafe
                 ChangeEnabledOfDishesElements(false);
                 ChangeEnabledOfWorkerElements(false);
                 dataGridView1.ReadOnly = false;
+                dataGridView1.AllowUserToDeleteRows = true;
             }
             catch (Exception ex)
             {
@@ -389,12 +392,17 @@ namespace Cafe
                 Administration_form.TableLoader.LoadSalesTable(dataGridView1);
                 ChangeEnabledOfDishesElements(false);
                 ChangeEnabledOfWorkerElements(false);
-                dataGridView1.ReadOnly = false;
+                dataGridView1.AllowUserToDeleteRows = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Administration_form.TableLoader.SaveChanges();
         }
     }
 }

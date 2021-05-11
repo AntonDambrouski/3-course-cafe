@@ -35,8 +35,21 @@ namespace Cafe.Authorization
                 sqlConnection.Open();
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 sqlCommand.Dispose();
-                sqlDataReader.Read();
-                return new User(long.Parse(sqlDataReader[0].ToString()), sqlDataReader.GetString(1), sqlDataReader.GetString(2), sqlDataReader.GetString(3), sqlDataReader.GetString(5));
+                if (sqlDataReader.Read())
+                {
+                    if (Convert.ToString(sqlDataReader[4]) == password)
+                    {
+                        return new User(long.Parse(sqlDataReader[0].ToString()), sqlDataReader.GetString(1), sqlDataReader.GetString(2), sqlDataReader.GetString(3), sqlDataReader.GetString(5));
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Неверный пароль", "password");
+                    }
+                }
+                else
+                {
+                    throw new ArgumentException("Неверный логин", "login");
+                }
             }
             catch (ArgumentException ex)
             {

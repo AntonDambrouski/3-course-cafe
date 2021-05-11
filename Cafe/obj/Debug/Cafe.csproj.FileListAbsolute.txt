@@ -102,3 +102,4 @@ D:\Cafe\Cafe\obj\Debug\Cafe.Add_forms.InputEmailForm.resources
 D:\Cafe\Cafe\bin\Debug\cafe.mdf
 D:\Cafe\Cafe\bin\Debug\cafe_log.ldf
 D:\Cafe\Cafe\obj\Debug\Cafe.Guest_form.ConfirmPurchaseForm.resources
+D:\Cafe\Cafe\obj\Debug\Cafe.csprojAssemblyReference.cache

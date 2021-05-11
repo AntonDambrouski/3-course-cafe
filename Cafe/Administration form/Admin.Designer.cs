@@ -35,6 +35,7 @@ namespace Cafe
             this.label1 = new System.Windows.Forms.Label();
             this.doBacklabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSales = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.labelErrorWorkrSearch = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@ namespace Cafe
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.buttonSales = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -98,6 +98,7 @@ namespace Cafe
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -108,6 +109,7 @@ namespace Cafe
             this.dataGridView1.Size = new System.Drawing.Size(746, 555);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.TabStop = false;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
             // label1
@@ -153,6 +155,20 @@ namespace Cafe
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // buttonSales
+            // 
+            this.buttonSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSales.BackColor = System.Drawing.Color.Lime;
+            this.buttonSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSales.Location = new System.Drawing.Point(200, 480);
+            this.buttonSales.Name = "buttonSales";
+            this.buttonSales.Size = new System.Drawing.Size(173, 30);
+            this.buttonSales.TabIndex = 15;
+            this.buttonSales.Text = "Продажи";
+            this.buttonSales.UseVisualStyleBackColor = false;
+            this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
             // 
             // groupBox1
             // 
@@ -568,20 +584,6 @@ namespace Cafe
             // 
             this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
-            // 
-            // buttonSales
-            // 
-            this.buttonSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSales.BackColor = System.Drawing.Color.Lime;
-            this.buttonSales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSales.Location = new System.Drawing.Point(200, 480);
-            this.buttonSales.Name = "buttonSales";
-            this.buttonSales.Size = new System.Drawing.Size(173, 30);
-            this.buttonSales.TabIndex = 15;
-            this.buttonSales.Text = "Продажи";
-            this.buttonSales.UseVisualStyleBackColor = false;
-            this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
             // 
             // Admin
             // 

@@ -88,7 +88,7 @@ Join Dishes on Dishes.Id = Purschase.id_dish", sqlConnection);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Save error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              //  MessageBox.Show(ex.Message, "Save error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
