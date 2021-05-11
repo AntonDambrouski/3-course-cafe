@@ -29,6 +29,7 @@ namespace Cafe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.panel1 = new System.Windows.Forms.Panel();
             this.userNameField = new System.Windows.Forms.TextBox();
             this.buttonRegistration = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@ namespace Cafe
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 517);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -79,7 +80,7 @@ namespace Cafe
             this.userNameField.Multiline = true;
             this.userNameField.Name = "userNameField";
             this.userNameField.Size = new System.Drawing.Size(246, 73);
-            this.userNameField.TabIndex = 6;
+            this.userNameField.TabIndex = 0;
             this.userNameField.Enter += new System.EventHandler(this.userNameField_Enter);
             this.userNameField.Leave += new System.EventHandler(this.userNameField_Leave);
             // 
@@ -96,7 +97,7 @@ namespace Cafe
             this.buttonRegistration.Location = new System.Drawing.Point(203, 427);
             this.buttonRegistration.Name = "buttonRegistration";
             this.buttonRegistration.Size = new System.Drawing.Size(342, 56);
-            this.buttonRegistration.TabIndex = 2;
+            this.buttonRegistration.TabIndex = 4;
             this.buttonRegistration.Text = "Зарегистрироваться";
             this.buttonRegistration.UseVisualStyleBackColor = false;
             this.buttonRegistration.Click += new System.EventHandler(this.buttonRegistration_Click);
@@ -118,7 +119,7 @@ namespace Cafe
             this.userSurnameField.Multiline = true;
             this.userSurnameField.Name = "userSurnameField";
             this.userSurnameField.Size = new System.Drawing.Size(246, 73);
-            this.userSurnameField.TabIndex = 6;
+            this.userSurnameField.TabIndex = 1;
             this.userSurnameField.Enter += new System.EventHandler(this.userSurnameField_Enter);
             this.userSurnameField.Leave += new System.EventHandler(this.userSurnameField_Leave);
             // 
@@ -129,7 +130,7 @@ namespace Cafe
             this.passwordField.Multiline = true;
             this.passwordField.Name = "passwordField";
             this.passwordField.Size = new System.Drawing.Size(246, 64);
-            this.passwordField.TabIndex = 6;
+            this.passwordField.TabIndex = 3;
             this.passwordField.Enter += new System.EventHandler(this.passwordField_Enter);
             this.passwordField.Leave += new System.EventHandler(this.passwordField_Leave);
             // 
@@ -140,7 +141,7 @@ namespace Cafe
             this.loginField.Multiline = true;
             this.loginField.Name = "loginField";
             this.loginField.Size = new System.Drawing.Size(246, 64);
-            this.loginField.TabIndex = 6;
+            this.loginField.TabIndex = 2;
             this.loginField.Enter += new System.EventHandler(this.loginField_Enter);
             this.loginField.Leave += new System.EventHandler(this.loginField_Leave);
             // 
@@ -196,7 +197,7 @@ namespace Cafe
             this.doBacklabel.Location = new System.Drawing.Point(3, 2);
             this.doBacklabel.Name = "doBacklabel";
             this.doBacklabel.Size = new System.Drawing.Size(67, 69);
-            this.doBacklabel.TabIndex = 2;
+            this.doBacklabel.TabIndex = 6;
             this.doBacklabel.Click += new System.EventHandler(this.doBacklabel_Click);
             // 
             // closeButton
@@ -219,7 +220,7 @@ namespace Cafe
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(766, 100);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Регистрация";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
@@ -227,11 +228,14 @@ namespace Cafe
             // 
             // Registration
             // 
+            this.AcceptButton = this.buttonRegistration;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 517);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";

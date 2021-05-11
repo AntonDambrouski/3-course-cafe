@@ -165,7 +165,7 @@ namespace Cafe
             this.buttonSales.Location = new System.Drawing.Point(200, 480);
             this.buttonSales.Name = "buttonSales";
             this.buttonSales.Size = new System.Drawing.Size(173, 30);
-            this.buttonSales.TabIndex = 15;
+            this.buttonSales.TabIndex = 17;
             this.buttonSales.Text = "Продажи";
             this.buttonSales.UseVisualStyleBackColor = false;
             this.buttonSales.Click += new System.EventHandler(this.buttonSales_Click);
@@ -185,7 +185,7 @@ namespace Cafe
             this.groupBox1.Location = new System.Drawing.Point(21, 250);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(525, 224);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Workers";
             // 
@@ -240,7 +240,7 @@ namespace Cafe
             this.textBoxWorkrSearch.Location = new System.Drawing.Point(79, 61);
             this.textBoxWorkrSearch.Name = "textBoxWorkrSearch";
             this.textBoxWorkrSearch.Size = new System.Drawing.Size(159, 22);
-            this.textBoxWorkrSearch.TabIndex = 11;
+            this.textBoxWorkrSearch.TabIndex = 15;
             this.textBoxWorkrSearch.TextChanged += new System.EventHandler(this.textBoxWorkrSearch_TextChanged);
             // 
             // comboBoxWorkrSearchBy
@@ -256,7 +256,7 @@ namespace Cafe
             this.comboBoxWorkrSearchBy.Location = new System.Drawing.Point(79, 19);
             this.comboBoxWorkrSearchBy.Name = "comboBoxWorkrSearchBy";
             this.comboBoxWorkrSearchBy.Size = new System.Drawing.Size(159, 24);
-            this.comboBoxWorkrSearchBy.TabIndex = 10;
+            this.comboBoxWorkrSearchBy.TabIndex = 14;
             this.comboBoxWorkrSearchBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxWorkrSearchBy_SelectedIndexChanged);
             // 
             // pictureBox1
@@ -277,7 +277,7 @@ namespace Cafe
             this.buttonShowWorkr.Location = new System.Drawing.Point(69, 53);
             this.buttonShowWorkr.Name = "buttonShowWorkr";
             this.buttonShowWorkr.Size = new System.Drawing.Size(99, 30);
-            this.buttonShowWorkr.TabIndex = 6;
+            this.buttonShowWorkr.TabIndex = 10;
             this.buttonShowWorkr.Text = "работники";
             this.buttonShowWorkr.UseVisualStyleBackColor = true;
             this.buttonShowWorkr.Click += new System.EventHandler(this.buttonShowWorkr_Click);
@@ -290,7 +290,7 @@ namespace Cafe
             this.buttonPrintWorkrTable.Location = new System.Drawing.Point(6, 172);
             this.buttonPrintWorkrTable.Name = "buttonPrintWorkrTable";
             this.buttonPrintWorkrTable.Size = new System.Drawing.Size(69, 25);
-            this.buttonPrintWorkrTable.TabIndex = 6;
+            this.buttonPrintWorkrTable.TabIndex = 13;
             this.buttonPrintWorkrTable.Text = "печать";
             this.buttonPrintWorkrTable.UseVisualStyleBackColor = true;
             this.buttonPrintWorkrTable.Click += new System.EventHandler(this.buttonPrintDishesTable_Click);
@@ -303,7 +303,7 @@ namespace Cafe
             this.buttonSendWorkrTable.Location = new System.Drawing.Point(6, 139);
             this.buttonSendWorkrTable.Name = "buttonSendWorkrTable";
             this.buttonSendWorkrTable.Size = new System.Drawing.Size(169, 27);
-            this.buttonSendWorkrTable.TabIndex = 6;
+            this.buttonSendWorkrTable.TabIndex = 12;
             this.buttonSendWorkrTable.Text = "отправить на email";
             this.buttonSendWorkrTable.UseVisualStyleBackColor = true;
             this.buttonSendWorkrTable.Click += new System.EventHandler(this.buttonSendDishesTable_Click);
@@ -316,7 +316,7 @@ namespace Cafe
             this.buttonAddWorkr.Location = new System.Drawing.Point(251, 19);
             this.buttonAddWorkr.Name = "buttonAddWorkr";
             this.buttonAddWorkr.Size = new System.Drawing.Size(197, 28);
-            this.buttonAddWorkr.TabIndex = 6;
+            this.buttonAddWorkr.TabIndex = 9;
             this.buttonAddWorkr.Text = "добавить работника";
             this.buttonAddWorkr.UseVisualStyleBackColor = true;
             this.buttonAddWorkr.Click += new System.EventHandler(this.buttonAddWorkr_Click);
@@ -329,7 +329,7 @@ namespace Cafe
             this.buttonDelWorkr.Location = new System.Drawing.Point(69, 19);
             this.buttonDelWorkr.Name = "buttonDelWorkr";
             this.buttonDelWorkr.Size = new System.Drawing.Size(176, 28);
-            this.buttonDelWorkr.TabIndex = 6;
+            this.buttonDelWorkr.TabIndex = 8;
             this.buttonDelWorkr.Text = "удалить работника";
             this.buttonDelWorkr.UseVisualStyleBackColor = true;
             this.buttonDelWorkr.Click += new System.EventHandler(this.buttonDelDishes_Click);
@@ -342,7 +342,7 @@ namespace Cafe
             this.buttonSaveWrkrTable.Location = new System.Drawing.Point(6, 104);
             this.buttonSaveWrkrTable.Name = "buttonSaveWrkrTable";
             this.buttonSaveWrkrTable.Size = new System.Drawing.Size(169, 29);
-            this.buttonSaveWrkrTable.TabIndex = 6;
+            this.buttonSaveWrkrTable.TabIndex = 11;
             this.buttonSaveWrkrTable.Text = "сохранить в word";
             this.buttonSaveWrkrTable.UseVisualStyleBackColor = true;
             this.buttonSaveWrkrTable.Click += new System.EventHandler(this.buttonSaveWrkrTable_Click);
@@ -365,7 +365,7 @@ namespace Cafe
             this.groupBox2.Location = new System.Drawing.Point(21, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(525, 184);
-            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
             // 
@@ -420,7 +420,7 @@ namespace Cafe
             this.textBoxDishesSearch.Location = new System.Drawing.Point(79, 61);
             this.textBoxDishesSearch.Name = "textBoxDishesSearch";
             this.textBoxDishesSearch.Size = new System.Drawing.Size(159, 22);
-            this.textBoxDishesSearch.TabIndex = 11;
+            this.textBoxDishesSearch.TabIndex = 7;
             this.textBoxDishesSearch.TextChanged += new System.EventHandler(this.textBoxDishesSearch_TextChanged);
             // 
             // comboBoxDishesSearchBy
@@ -436,7 +436,7 @@ namespace Cafe
             this.comboBoxDishesSearchBy.Location = new System.Drawing.Point(79, 19);
             this.comboBoxDishesSearchBy.Name = "comboBoxDishesSearchBy";
             this.comboBoxDishesSearchBy.Size = new System.Drawing.Size(159, 24);
-            this.comboBoxDishesSearchBy.TabIndex = 10;
+            this.comboBoxDishesSearchBy.TabIndex = 6;
             this.comboBoxDishesSearchBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxDishesSearchBy_SelectedIndexChanged);
             // 
             // pictureBox3
@@ -458,7 +458,7 @@ namespace Cafe
             this.buttonPrintDishesTable.Location = new System.Drawing.Point(6, 149);
             this.buttonPrintDishesTable.Name = "buttonPrintDishesTable";
             this.buttonPrintDishesTable.Size = new System.Drawing.Size(69, 25);
-            this.buttonPrintDishesTable.TabIndex = 6;
+            this.buttonPrintDishesTable.TabIndex = 5;
             this.buttonPrintDishesTable.Text = "печать";
             this.buttonPrintDishesTable.UseVisualStyleBackColor = true;
             this.buttonPrintDishesTable.Click += new System.EventHandler(this.buttonPrintDishesTable_Click);
@@ -471,7 +471,7 @@ namespace Cafe
             this.buttonSendDishesTable.Location = new System.Drawing.Point(6, 116);
             this.buttonSendDishesTable.Name = "buttonSendDishesTable";
             this.buttonSendDishesTable.Size = new System.Drawing.Size(169, 27);
-            this.buttonSendDishesTable.TabIndex = 6;
+            this.buttonSendDishesTable.TabIndex = 4;
             this.buttonSendDishesTable.Text = "отправить на email";
             this.buttonSendDishesTable.UseVisualStyleBackColor = true;
             this.buttonSendDishesTable.Click += new System.EventHandler(this.buttonSendDishesTable_Click);
@@ -483,7 +483,7 @@ namespace Cafe
             this.buttonLoadDishes.Location = new System.Drawing.Point(69, 19);
             this.buttonLoadDishes.Name = "buttonLoadDishes";
             this.buttonLoadDishes.Size = new System.Drawing.Size(142, 32);
-            this.buttonLoadDishes.TabIndex = 6;
+            this.buttonLoadDishes.TabIndex = 0;
             this.buttonLoadDishes.Text = "просмотр блюд";
             this.buttonLoadDishes.UseVisualStyleBackColor = true;
             this.buttonLoadDishes.Click += new System.EventHandler(this.buttonLoadDishes_Click);
@@ -496,7 +496,7 @@ namespace Cafe
             this.buttonAddDishes.Location = new System.Drawing.Point(217, 19);
             this.buttonAddDishes.Name = "buttonAddDishes";
             this.buttonAddDishes.Size = new System.Drawing.Size(151, 32);
-            this.buttonAddDishes.TabIndex = 6;
+            this.buttonAddDishes.TabIndex = 1;
             this.buttonAddDishes.Text = "добавить блюдо";
             this.buttonAddDishes.UseVisualStyleBackColor = true;
             this.buttonAddDishes.Click += new System.EventHandler(this.buttonAddDishes_Click);
@@ -509,7 +509,7 @@ namespace Cafe
             this.buttonSaveDishesTable.Location = new System.Drawing.Point(6, 81);
             this.buttonSaveDishesTable.Name = "buttonSaveDishesTable";
             this.buttonSaveDishesTable.Size = new System.Drawing.Size(169, 29);
-            this.buttonSaveDishesTable.TabIndex = 6;
+            this.buttonSaveDishesTable.TabIndex = 3;
             this.buttonSaveDishesTable.Text = "сохранить в word";
             this.buttonSaveDishesTable.UseVisualStyleBackColor = true;
             this.buttonSaveDishesTable.Click += new System.EventHandler(this.buttonSaveDishesTable_Click);
@@ -522,7 +522,7 @@ namespace Cafe
             this.buttonDelDishes.Location = new System.Drawing.Point(374, 19);
             this.buttonDelDishes.Name = "buttonDelDishes";
             this.buttonDelDishes.Size = new System.Drawing.Size(137, 32);
-            this.buttonDelDishes.TabIndex = 6;
+            this.buttonDelDishes.TabIndex = 2;
             this.buttonDelDishes.Text = "удалить блюдо";
             this.buttonDelDishes.UseVisualStyleBackColor = true;
             this.buttonDelDishes.Click += new System.EventHandler(this.buttonDelDishes_Click);
@@ -536,7 +536,7 @@ namespace Cafe
             this.buttonShowAccounts.Location = new System.Drawing.Point(21, 480);
             this.buttonShowAccounts.Name = "buttonShowAccounts";
             this.buttonShowAccounts.Size = new System.Drawing.Size(173, 30);
-            this.buttonShowAccounts.TabIndex = 9;
+            this.buttonShowAccounts.TabIndex = 16;
             this.buttonShowAccounts.Text = "учётная запись";
             this.buttonShowAccounts.UseVisualStyleBackColor = false;
             this.buttonShowAccounts.Click += new System.EventHandler(this.buttonShowAccounts_Click);
@@ -593,6 +593,8 @@ namespace Cafe
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";

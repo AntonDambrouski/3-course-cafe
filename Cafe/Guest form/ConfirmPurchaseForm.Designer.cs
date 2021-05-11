@@ -64,7 +64,7 @@ namespace Cafe.Guest_form
             this.buttonMakePurhcase.Location = new System.Drawing.Point(226, 158);
             this.buttonMakePurhcase.Name = "buttonMakePurhcase";
             this.buttonMakePurhcase.Size = new System.Drawing.Size(151, 32);
-            this.buttonMakePurhcase.TabIndex = 10;
+            this.buttonMakePurhcase.TabIndex = 0;
             this.buttonMakePurhcase.Text = "Оплатить";
             this.buttonMakePurhcase.UseVisualStyleBackColor = false;
             this.buttonMakePurhcase.Click += new System.EventHandler(this.buttonMakePurhcase_Click);
@@ -77,7 +77,7 @@ namespace Cafe.Guest_form
             this.groupBox3.Location = new System.Drawing.Point(12, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(383, 196);
-            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Итого к оплате";
             // 
@@ -87,9 +87,11 @@ namespace Cafe.Guest_form
             this.textBoxChsnDishes.Location = new System.Drawing.Point(6, 21);
             this.textBoxChsnDishes.Multiline = true;
             this.textBoxChsnDishes.Name = "textBoxChsnDishes";
+            this.textBoxChsnDishes.ReadOnly = true;
             this.textBoxChsnDishes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxChsnDishes.Size = new System.Drawing.Size(371, 131);
             this.textBoxChsnDishes.TabIndex = 14;
+            this.textBoxChsnDishes.TabStop = false;
             // 
             // groupBox1
             // 
@@ -100,7 +102,7 @@ namespace Cafe.Guest_form
             this.groupBox1.Location = new System.Drawing.Point(12, 228);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(226, 133);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Способ получения чека";
             // 
@@ -111,7 +113,7 @@ namespace Cafe.Guest_form
             this.buttonPrintDishesTable.Location = new System.Drawing.Point(6, 89);
             this.buttonPrintDishesTable.Name = "buttonPrintDishesTable";
             this.buttonPrintDishesTable.Size = new System.Drawing.Size(69, 25);
-            this.buttonPrintDishesTable.TabIndex = 7;
+            this.buttonPrintDishesTable.TabIndex = 3;
             this.buttonPrintDishesTable.Text = "печать";
             this.buttonPrintDishesTable.UseVisualStyleBackColor = true;
             this.buttonPrintDishesTable.Click += new System.EventHandler(this.buttonPrintDishesTable_Click);
@@ -123,7 +125,7 @@ namespace Cafe.Guest_form
             this.buttonSendDishesTable.Location = new System.Drawing.Point(6, 56);
             this.buttonSendDishesTable.Name = "buttonSendDishesTable";
             this.buttonSendDishesTable.Size = new System.Drawing.Size(169, 27);
-            this.buttonSendDishesTable.TabIndex = 8;
+            this.buttonSendDishesTable.TabIndex = 2;
             this.buttonSendDishesTable.Text = "отправить на email";
             this.buttonSendDishesTable.UseVisualStyleBackColor = true;
             this.buttonSendDishesTable.Click += new System.EventHandler(this.buttonSendDishesTable_Click);
@@ -135,7 +137,7 @@ namespace Cafe.Guest_form
             this.buttonSaveDishesTable.Location = new System.Drawing.Point(6, 21);
             this.buttonSaveDishesTable.Name = "buttonSaveDishesTable";
             this.buttonSaveDishesTable.Size = new System.Drawing.Size(169, 29);
-            this.buttonSaveDishesTable.TabIndex = 9;
+            this.buttonSaveDishesTable.TabIndex = 1;
             this.buttonSaveDishesTable.Text = "сохранить в файл";
             this.buttonSaveDishesTable.UseVisualStyleBackColor = true;
             this.buttonSaveDishesTable.Click += new System.EventHandler(this.buttonSaveDishesTable_Click);
@@ -158,6 +160,7 @@ namespace Cafe.Guest_form
             // 
             // ConfirmPurchaseForm
             // 
+            this.AcceptButton = this.buttonMakePurhcase;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
@@ -166,6 +169,8 @@ namespace Cafe.Guest_form
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConfirmPurchaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ConfirmPurchaseForm";

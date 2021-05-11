@@ -29,6 +29,7 @@ namespace Cafe
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,7 +70,7 @@ namespace Cafe
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(782, 640);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
@@ -86,6 +87,7 @@ namespace Cafe
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(746, 526);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.TabStop = false;
             // 
             // label2
             // 
@@ -123,7 +125,7 @@ namespace Cafe
             this.doBacklabel.Location = new System.Drawing.Point(2, 1);
             this.doBacklabel.Name = "doBacklabel";
             this.doBacklabel.Size = new System.Drawing.Size(67, 69);
-            this.doBacklabel.TabIndex = 3;
+            this.doBacklabel.TabIndex = 7;
             this.doBacklabel.Click += new System.EventHandler(this.doBacklabel_Click);
             // 
             // panel1
@@ -144,7 +146,7 @@ namespace Cafe
             this.panel1.Location = new System.Drawing.Point(780, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(385, 640);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -199,7 +201,7 @@ namespace Cafe
             this.textBoxDishesSearch.Location = new System.Drawing.Point(79, 61);
             this.textBoxDishesSearch.Name = "textBoxDishesSearch";
             this.textBoxDishesSearch.Size = new System.Drawing.Size(159, 22);
-            this.textBoxDishesSearch.TabIndex = 11;
+            this.textBoxDishesSearch.TabIndex = 2;
             this.textBoxDishesSearch.TextChanged += new System.EventHandler(this.textBoxDishesSearch_TextChanged);
             // 
             // comboBoxDishesSearchBy
@@ -215,7 +217,7 @@ namespace Cafe
             this.comboBoxDishesSearchBy.Location = new System.Drawing.Point(79, 19);
             this.comboBoxDishesSearchBy.Name = "comboBoxDishesSearchBy";
             this.comboBoxDishesSearchBy.Size = new System.Drawing.Size(159, 24);
-            this.comboBoxDishesSearchBy.TabIndex = 10;
+            this.comboBoxDishesSearchBy.TabIndex = 1;
             // 
             // buttonShowBasket
             // 
@@ -224,7 +226,7 @@ namespace Cafe
             this.buttonShowBasket.Location = new System.Drawing.Point(89, 222);
             this.buttonShowBasket.Name = "buttonShowBasket";
             this.buttonShowBasket.Size = new System.Drawing.Size(185, 42);
-            this.buttonShowBasket.TabIndex = 11;
+            this.buttonShowBasket.TabIndex = 3;
             this.buttonShowBasket.Text = "показать корзину";
             this.buttonShowBasket.UseVisualStyleBackColor = true;
             this.buttonShowBasket.Click += new System.EventHandler(this.buttonShowBasket_Click);
@@ -278,7 +280,7 @@ namespace Cafe
             this.buttonRemoveFromBasket.Location = new System.Drawing.Point(89, 318);
             this.buttonRemoveFromBasket.Name = "buttonRemoveFromBasket";
             this.buttonRemoveFromBasket.Size = new System.Drawing.Size(185, 42);
-            this.buttonRemoveFromBasket.TabIndex = 6;
+            this.buttonRemoveFromBasket.TabIndex = 5;
             this.buttonRemoveFromBasket.Text = "убрать из корзины";
             this.buttonRemoveFromBasket.UseVisualStyleBackColor = true;
             this.buttonRemoveFromBasket.Click += new System.EventHandler(this.buttonRemoveFromBasket_Click);
@@ -291,7 +293,7 @@ namespace Cafe
             this.buttonAddToBasket.Location = new System.Drawing.Point(89, 270);
             this.buttonAddToBasket.Name = "buttonAddToBasket";
             this.buttonAddToBasket.Size = new System.Drawing.Size(185, 42);
-            this.buttonAddToBasket.TabIndex = 6;
+            this.buttonAddToBasket.TabIndex = 4;
             this.buttonAddToBasket.Text = "добавить в корзину";
             this.buttonAddToBasket.UseVisualStyleBackColor = true;
             this.buttonAddToBasket.Click += new System.EventHandler(this.buttonAddToBasket_Click);
@@ -303,7 +305,7 @@ namespace Cafe
             this.buttonShowDishes.Location = new System.Drawing.Point(120, 42);
             this.buttonShowDishes.Name = "buttonShowDishes";
             this.buttonShowDishes.Size = new System.Drawing.Size(154, 42);
-            this.buttonShowDishes.TabIndex = 6;
+            this.buttonShowDishes.TabIndex = 0;
             this.buttonShowDishes.Text = "просмотр блюд";
             this.buttonShowDishes.UseVisualStyleBackColor = true;
             this.buttonShowDishes.Click += new System.EventHandler(this.buttonShowDishes_Click);
@@ -338,6 +340,8 @@ namespace Cafe
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
